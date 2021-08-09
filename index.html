@@ -11,14 +11,17 @@
 
     <body>
         <h1>Awesome books</h1>
-        <div class="booksContainer">
-            <ul id="booksList"></ul>
+        <div class="books-container">
+            <ul id="books"></ul>
         </div>
-        <form id="book-form">
-            <input type="text" id="title" name="title" placeholder="Title"><br>
-            <input type="text" id="author" name="author" placeholder="Author"><br>
-            <button id="submitButton" type="submit" onchange="storeBooks">Add</button>
+        <form action="#" id="form">
+            <input type="text" name="title" id="title" placeholder="Title" />
+            <br>
+            <input type="text" name="author" id="author" placeholder="Author" />
+            <br>
+            <input type="submit" name="submit-button" id="submit-button" value="Add book" />
         </form>
+
         <script src="./JS/main.js"></script>
     </body>
 </html>
