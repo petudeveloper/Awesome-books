@@ -2,6 +2,7 @@ let books = [];
 let book = {};
 
 const addBookButton = document.getElementById('submitButton');
+const booksList = document.getElementById('booksList');
 
 addBookButton.addEventListener('click', addBook)
 
@@ -16,3 +17,13 @@ function removeBook(title, author){
   books = books.filter(book => book.title != title && book.author != author)
   return books
 }
+
+addBook("title1", "author1")
+addBook("title2", "author2")
+addBook("title3", "author3")
+
+books.forEach( book => {
+  let li = document.createElement('li');
+  booksList.appendChild(li);
+  li.textContent = book.title + book.author;
+})
