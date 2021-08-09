@@ -12,14 +12,12 @@
     <body>
         <h1>Awesome books</h1>
         <div class="booksContainer">
-            <ul id="booksList">
-
-            </ul>
+            <ul id="booksList"></ul>
         </div>
-        <form>
+        <form id="book-form">
             <input type="text" id="title" name="title" placeholder="Title"><br>
             <input type="text" id="author" name="author" placeholder="Author"><br>
-            <button id="submitButton" type="submit">Add</button>
+            <button id="submitButton" type="submit" onchange="storeBooks">Add</button>
         </form>
         <script src="./JS/main.js"></script>
     </body>
