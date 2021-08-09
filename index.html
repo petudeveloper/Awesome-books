@@ -7,27 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
     <title>Aweasome Books</title>
-    <script src="./JS/main.js"></script>
 </head>
 
-<body>
-    <h1>Awesome books</h1>
-    <article>
-        <h2 class="book-name">Miserable</h2>
-        <h2 class="author-name">Paolo Coelho</h2>
-        <button type="button">Remove</button>
-        <hr>
-    </article>
-    <article>
-        <h2 class="book-name">Red Paper</h2>
-        <h2 class="author-name">Good man</h2>
-        <button type="button">Remove</button>
-        <hr>
-    </article>
-    <form>
-        <input type="text" id="title" name="title" placeholder="Title"><br>
-        <input type="text" id="author" name="author" placeholder="Author"><br>
-        <button type="submit">Add</button>
-    </form>
-</body>
+    <body>
+        <h1>Awesome books</h1>
+        <div class="books-container">
+            <ul>
+
+            </ul>
+        </div>
+        <form>
+            <input type="text" id="title" name="title" placeholder="Title"><br>
+            <input type="text" id="author" name="author" placeholder="Author"><br>
+            <button id="submitButton" type="submit">Add</button>
+        </form>
+        <script src="./JS/main.js"></script>
+    </body>
 </html>
