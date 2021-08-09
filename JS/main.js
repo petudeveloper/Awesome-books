@@ -1,59 +1,46 @@
-let books = [];
-let book = {};
+let myBooks = [];
 
-const addBookButton = document.getElementById('submitButton');
-const booksList = document.getElementById('booksList');
-
-addBookButton.addEventListener('click', addBook);
-
-function addBook(title, author) {
-  // let title = document.querySelector("#title").value;
-  // let author = document.querySelector("#author").value;
-  book = { title, author };
-  books.push(book);
-}
-
-function removeBook(title, author) {
-  books = books.filter((book) => book.title !== title && book.author !== author);
-  return books;
-}
-
-addBook('title1', 'author1');
-addBook('title2', 'author2');
-addBook('title3', 'author3');
-addBook('title4', 'author4');
-addBook('title5', 'author5');
-
-// removeBook('title4', 'author4');
-function displayBooks() {
-  books.forEach((book) => {
-    booksList.innerHTML += '<li>'
-    + `<h3>${book.title}</h3>`
-    + `<p>${book.author}</p>`
-    + '</li>';
-    document.querySelector('.booksContainer').appendChild(booksList);
-  });
-}
-displayBooks();
-
-// Local Storage
-
-function isLocalStorageAvailable() {
-  try {
-    const valueToStore = 'test';
-    const mykey = 'key';
-    localStorage.setItem(mykey, valueToStore);
-    const recoveredValue = localStorage.getItem(mykey);
-    localStorage.removeItem(mykey);
-
-    return recoveredValue === valueToStore;
-  } catch (e) {
-    return false;
+class Book {
+  constructor(title, author) {
+    this.title = title;
+    this.author = author;
   }
 }
-const form = document.querySelector('#book-form');
-const storeBooks = () => {
-  if (isLocalStorageAvailable()) {
-    localStorage.setItem('booksData', JSON.stringify(books));
+
+function updateLocalStorage() {
+  localStorage.myBooks = JSON.stringify(myBooks);
+  getBooks();
+}
+
+function destroyBook(id) {
+  myBooks.splice(id, 1);
+  updateLocalStorage();
+}
+
+function newBook(e) {
+  e.preventDefault();
+  title = document.getElementById("title");
+  author = document.getElementById("author");
+  myBooks.push(new Book(title.value, author.value));
+  updateLocalStorage();
+  title.value = "";
+  author.value = "";
+}
+const form = document.getElementById("form");
+form.addEventListener("submit", newBook);
+
+function getBooks() {
+  myBooks = JSON.parse(localStorage.myBooks);
+  books = document.getElementById("books");
+  books.innerHTML = "";
+  let id = 0;
+  for (book of myBooks) {
+  books.innerHTML += `
+  <li>
+      <p>${book.title}</p>
+      <p>${book.author}</p>
+      <button onClick="destroyBook(${id++})">Remove</button>
+  </li>`;
   }
-};
+}
+if (localStorage.length > 0) getBooks();
