@@ -7,3 +7,7 @@ body {
 form > input {
   margin-bottom: 10px;
 }
+
+li {
+  list-style: none;
+}
