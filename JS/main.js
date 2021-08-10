@@ -1,12 +1,5 @@
 let myBooks = [];
 
-class Book {
-  constructor(title, author) {
-    this.title = title;
-    this.author = author;
-  }
-}
-
 function getBooks() {
   myBooks = JSON.parse(localStorage.myBooks);
   const books = document.getElementById('books');
@@ -28,18 +21,26 @@ function updateLocalStorage() {
   getBooks();
 }
 
-function newBook(e) {
-  e.preventDefault();
-  const title = document.getElementById('title');
-  const author = document.getElementById('author');
-  myBooks.push(new Book(title.value, author.value));
-  updateLocalStorage();
-  title.value = '';
-  author.value = '';
+class Book {
+  constructor(title, author) {
+    this.title = title;
+    this.author = author;
+  }
+
+  addBook() {
+    myBooks.push(this);
+    updateLocalStorage();
+  }
 }
 
 const form = document.getElementById('form');
-form.addEventListener('submit', newBook);
+
+form.addEventListener('submit', () => {
+  const title = document.getElementById('title');
+  const author = document.getElementById('author');
+  const bookToAdd = new Book(title.value, author.value);
+  bookToAdd.addBook();
+});
 
 // eslint-disable-next-line no-unused-vars
 function removeBook(id) {
