@@ -15,6 +15,7 @@ Awesome books with JavaScript:
 - JavaScript objects and array
 - Build a personal portfolio site.
 - Learn JavaScript syntax and DOM interface
+- Learn JavaScript classes
 - Store data with local storage
 
 
@@ -25,6 +26,7 @@ Awesome books with JavaScript:
   - Linters, GIT
   - JavaScript
    -- Objects & Arrays
+   -- JavaScript classes
    -- Store data with local storage
 
 ## Live Demo 
@@ -51,7 +53,7 @@ Node updated version
 👤 **DavidAlvarez**
 
 - GitHub: [petumazo](https://github.com/petumazo)
-- GitHub: [@hamzaoutdoors](https://github.com/Hamzaoutdoors)
+- GitHub: [hamzaoutdoors](https://github.com/Hamzaoutdoors)
 
 
 ## 🤝 Contributing
@@ -67,7 +69,7 @@ Give a ⭐️ if you like this project!
 ## Acknowledgments
 
 - Module 2 : 
- -- project Awesome Books (add and remove books)
+ -- project Awesome Books (Awesome books: refactor to use JavaScript classes)
 
 
 
