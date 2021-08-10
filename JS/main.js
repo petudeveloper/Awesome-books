@@ -31,6 +31,12 @@ class Book {
     myBooks.push(this);
     updateLocalStorage();
   }
+
+  static removeBook() {
+    const id = myBooks.indexOf(this);
+    myBooks.splice(id, 1);
+    updateLocalStorage();
+  }
 }
 
 const form = document.getElementById('form');
