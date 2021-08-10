@@ -10,7 +10,7 @@ function getBooks() {
     books.innerHTML += '<li>'
     + `<h3>${book.title}</h3>`
     + `<p>${book.author}</p>`
-    + `<button onClick="removeBook(${id})">Remove</button>`
+    + `<button onClick="Book.removeBook(${id})">Remove</button>`
     + '</li>';
     id += 1;
   });
@@ -31,6 +31,12 @@ class Book {
     myBooks.push(this);
     updateLocalStorage();
   }
+
+  static removeBook() {
+    const id = myBooks.indexOf(this);
+    myBooks.splice(id, 1);
+    updateLocalStorage();
+  }
 }
 
 const form = document.getElementById('form');
@@ -41,11 +47,5 @@ form.addEventListener('submit', () => {
   const bookToAdd = new Book(title.value, author.value);
   bookToAdd.addBook();
 });
-
-// eslint-disable-next-line no-unused-vars
-function removeBook(id) {
-  myBooks.splice(id, 1);
-  updateLocalStorage();
-}
 
 if (localStorage.length > 0) getBooks();
