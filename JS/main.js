@@ -17,7 +17,7 @@ function getBooks() {
     books.innerHTML += '<li>'
     + `<h3>${book.title}</h3>`
     + `<p>${book.author}</p>`
-    + `<button onClick="destroyBook(${id})">Remove</button>`
+    + `<button onClick="removeBook(${id})">Remove</button>`
     + '</li>';
     id += 1;
   });
@@ -42,7 +42,7 @@ const form = document.getElementById('form');
 form.addEventListener('submit', newBook);
 
 // eslint-disable-next-line no-unused-vars
-function destroyBook(id) {
+function removeBook(id) {
   myBooks.splice(id, 1);
   updateLocalStorage();
 }
