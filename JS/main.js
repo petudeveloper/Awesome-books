@@ -17,8 +17,9 @@ function getBooks() {
     books.innerHTML += '<li>'
     + `<h3>${book.title}</h3>`
     + `<p>${book.author}</p>`
-    + `<button onClick="destroyBook(${id += 1})">Remove</button>`
+    + `<button onClick="destroyBook(${id})">Remove</button>`
     + '</li>';
+    id += 1;
   });
 }
 
