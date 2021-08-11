@@ -11,8 +11,9 @@ class ListOfBooks {
     if (title.value === '' || author.value === '') {
       alert('Please fill in all fields');
     } else {
-    this.books.push({ title: title.value, author: author.value });
-    this.updateLocalStorage()}
+      this.books.push({ title: title.value, author: author.value });
+      this.updateLocalStorage();
+    }
   }
 
   removeBook(id) {
