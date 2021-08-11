@@ -1,51 +1,48 @@
-let myBooks = [];
+/* eslint-disable no-unused-vars */
 
-function getBooks() {
-  myBooks = JSON.parse(localStorage.myBooks);
-  const books = document.getElementById('books');
-  books.innerHTML = '';
-  let id = 0;
-
-  myBooks.forEach((book) => {
-    books.innerHTML += '<li>'
-    + `<h3>${book.title}</h3>`
-    + `<p>${book.author}</p>`
-    + `<button onClick="Book.removeBook(${id})">Remove</button>`
-    + '</li>';
-    id += 1;
-  });
-}
-
-function updateLocalStorage() {
-  localStorage.myBooks = JSON.stringify(myBooks);
-  getBooks();
-}
-
-class Book {
-  constructor(title, author) {
-    this.title = title;
-    this.author = author;
+class ListOfBook {
+  constructor() {
+    if (localStorage.myBooks != null) {
+      this.books = JSON.parse(localStorage.myBooks);
+    } else {
+      this.books = [];
+    }
   }
 
-  addBook() {
-    myBooks.push(this);
-    updateLocalStorage();
+  newBook() {
+    const title = document.getElementById('title');
+    const author = document.getElementById('author');
+    this.books.push({ title: title.value, author: author.value });
+    this.updateLocalStorage();
   }
 
-  static removeBook() {
-    const id = myBooks.indexOf(this);
-    myBooks.splice(id, 1);
-    updateLocalStorage();
+  destroyBook(id) {
+    this.books.splice(id, 1);
+    this.updateLocalStorage();
+  }
+
+  showBooks() {
+    const books = document.getElementById('books');
+    books.innerHTML = '';
+    let id = 0;
+
+    this.books.forEach((book) => {
+      books.innerHTML += `
+      <li>
+        <p>${book.title}</p>
+        <p>${book.author}</p>
+        <button onClick="myBooks.destroyBook(${id})">Remove</button>
+      </li>`;
+      id += 1;
+    });
+  }
+
+  updateLocalStorage() {
+    localStorage.myBooks = JSON.stringify(this.books);
+    this.showBooks();
   }
 }
 
-const form = document.getElementById('form');
+const myBooks = new ListOfBook();
 
-form.addEventListener('submit', () => {
-  const title = document.getElementById('title');
-  const author = document.getElementById('author');
-  const bookToAdd = new Book(title.value, author.value);
-  bookToAdd.addBook();
-});
-
-if (localStorage.length > 0) getBooks();
+myBooks.showBooks();
