@@ -35,11 +35,6 @@ class ListOfBooks {
       </tr>`;
       id += 1;
     });
-
-    const listTitle = document.querySelector('.list-title');
-    if (!this.books) {
-      listTitle.classList.add('d-block');
-    } else { listTitle.classList.add('d-none'); }
   }
 
   updateLocalStorage() {
