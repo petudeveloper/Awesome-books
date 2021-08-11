@@ -2,7 +2,7 @@
 
 Awesome books with JavaScript: 
 
-![Awesome book](<img width="348" alt="readmeImage" src="https://user-images.githubusercontent.com/80895497/128790322-e9a59915-4677-479d-89f0-3224ebda0bbd.png">)
+![Awesome book](<img width="348" alt="readmeImage" src="https://github.com/petumazo/Awesome-books/blob/development/media/readmeImage.png">)
 
 
 ![](https://img.shields.io/badge/Microverse-blueviolet)
