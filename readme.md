@@ -3,6 +3,7 @@
 Awesome books with JavaScript: 
 
 ![Awesome book](media/readmeImage.png)
+![Awesome book](media/readmeImage2.png)
 
 
 ![](https://img.shields.io/badge/Microverse-blueviolet)
