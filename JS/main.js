@@ -2,18 +2,17 @@
 
 class ListOfBooks {
   constructor() {
-    if (localStorage.myBooks != null) {
-      this.books = JSON.parse(localStorage.myBooks);
-    } else {
-      this.books = [];
-    }
+    this.books = (localStorage.myBooks != null) ? JSON.parse(localStorage.myBooks) : [];
   }
 
   newBook() {
     const title = document.getElementById('title');
     const author = document.getElementById('author');
+    if (title.value === '' || author.value === '') {
+      alert('Please fill in all fields');
+    } else {
     this.books.push({ title: title.value, author: author.value });
-    this.updateLocalStorage();
+    this.updateLocalStorage()}
   }
 
   removeBook(id) {
