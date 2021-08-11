@@ -1,5 +1,4 @@
 /* eslint-disable no-unused-vars */
-
 class ListOfBooks {
   constructor() {
     this.books = (localStorage.myBooks != null) ? JSON.parse(localStorage.myBooks) : [];
@@ -19,6 +18,8 @@ class ListOfBooks {
   removeBook(id) {
     this.books.splice(id, 1);
     this.updateLocalStorage();
+    const listTitle = document.querySelector('.list-title');
+    if (this.books.length === 0) { listTitle.innerHTML = 'Books List is empty'; }
   }
 
   showBooks() {
@@ -27,12 +28,13 @@ class ListOfBooks {
     let id = 0;
 
     this.books.forEach((book) => {
-      books.innerHTML += `
-      <li>
-        <p>${book.title}</p>
-        <p>${book.author}</p>
-        <button onClick="myBooks.removeBook(${id})">Remove</button>
-      </li>`;
+      books.innerHTML
+      += `<tr>
+       <td class="col-sm-10">"${book.title}" written by ${book.author}</td>
+      <td class="col-sm-2">
+      <a href="#" class="btn btn-light btn-sm" onClick="myBooks.removeBook(${id})">Remove</a>
+      </td>
+      </tr>`;
       id += 1;
     });
   }
@@ -46,3 +48,7 @@ class ListOfBooks {
 const myBooks = new ListOfBooks();
 
 myBooks.showBooks();
+
+const listTitle = document.querySelector('.list-title');
+
+if (myBooks.books.length !== 0) { listTitle.innerHTML = ''; }

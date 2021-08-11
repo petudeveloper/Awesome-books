@@ -1,9 +1,7 @@
 body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 4rem;
+  margin: 2rem;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 form > input {
@@ -12,4 +10,17 @@ form > input {
 
 li {
   list-style: none;
+}
+
+.books-container {
+  border: 2px solid black;
+  width: 50vw;
+}
+
+.btn {
+  border: 1px solid black;
+}
+
+.btn:hover {
+  border: 2px solid #2e2e2e;
 }
