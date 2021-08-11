@@ -18,6 +18,8 @@ class ListOfBooks {
   removeBook(id) {
     this.books.splice(id, 1);
     this.updateLocalStorage();
+    const listTitle = document.querySelector('.list-title');
+    if (this.books.length === 0) { listTitle.innerHTML = 'Books List is empty'; }
   }
 
   showBooks() {
@@ -46,3 +48,7 @@ class ListOfBooks {
 const myBooks = new ListOfBooks();
 
 myBooks.showBooks();
+
+const listTitle = document.querySelector('.list-title');
+
+if (myBooks.books.length !== 0) { listTitle.innerHTML = ''; }
