@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 
-class ListOfBook {
+class ListOfBooks {
   constructor() {
     if (localStorage.myBooks != null) {
       this.books = JSON.parse(localStorage.myBooks);
@@ -16,7 +16,7 @@ class ListOfBook {
     this.updateLocalStorage();
   }
 
-  destroyBook(id) {
+  removeBook(id) {
     this.books.splice(id, 1);
     this.updateLocalStorage();
   }
@@ -31,7 +31,7 @@ class ListOfBook {
       <li>
         <p>${book.title}</p>
         <p>${book.author}</p>
-        <button onClick="myBooks.destroyBook(${id})">Remove</button>
+        <button onClick="myBooks.removeBook(${id})">Remove</button>
       </li>`;
       id += 1;
     });
@@ -43,6 +43,6 @@ class ListOfBook {
   }
 }
 
-const myBooks = new ListOfBook();
+const myBooks = new ListOfBooks();
 
 myBooks.showBooks();
