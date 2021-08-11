@@ -1,50 +1,48 @@
-let myBooks = [];
+/* eslint-disable no-unused-vars */
 
-class Book {
-  constructor(title, author) {
-    this.title = title;
-    this.author = author;
+class ListOfBooks {
+  constructor() {
+    this.books = (localStorage.myBooks != null) ? JSON.parse(localStorage.myBooks) : [];
+  }
+
+  newBook() {
+    const title = document.getElementById('title');
+    const author = document.getElementById('author');
+    if (title.value === '' || author.value === '') {
+      alert('Please fill in all fields');
+    } else {
+      this.books.push({ title: title.value, author: author.value });
+      this.updateLocalStorage();
+    }
+  }
+
+  removeBook(id) {
+    this.books.splice(id, 1);
+    this.updateLocalStorage();
+  }
+
+  showBooks() {
+    const books = document.getElementById('books');
+    books.innerHTML = '';
+    let id = 0;
+
+    this.books.forEach((book) => {
+      books.innerHTML += `
+      <li>
+        <p>${book.title}</p>
+        <p>${book.author}</p>
+        <button onClick="myBooks.removeBook(${id})">Remove</button>
+      </li>`;
+      id += 1;
+    });
+  }
+
+  updateLocalStorage() {
+    localStorage.myBooks = JSON.stringify(this.books);
+    this.showBooks();
   }
 }
 
-function getBooks() {
-  myBooks = JSON.parse(localStorage.myBooks);
-  const books = document.getElementById('books');
-  books.innerHTML = '';
-  let id = 0;
+const myBooks = new ListOfBooks();
 
-  myBooks.forEach((book) => {
-    books.innerHTML += '<li>'
-    + `<h3>${book.title}</h3>`
-    + `<p>${book.author}</p>`
-    + `<button onClick="removeBook(${id})">Remove</button>`
-    + '</li>';
-    id += 1;
-  });
-}
-
-function updateLocalStorage() {
-  localStorage.myBooks = JSON.stringify(myBooks);
-  getBooks();
-}
-
-function newBook(e) {
-  e.preventDefault();
-  const title = document.getElementById('title');
-  const author = document.getElementById('author');
-  myBooks.push(new Book(title.value, author.value));
-  updateLocalStorage();
-  title.value = '';
-  author.value = '';
-}
-
-const form = document.getElementById('form');
-form.addEventListener('submit', newBook);
-
-// eslint-disable-next-line no-unused-vars
-function removeBook(id) {
-  myBooks.splice(id, 1);
-  updateLocalStorage();
-}
-
-if (localStorage.length > 0) getBooks();
+myBooks.showBooks();
