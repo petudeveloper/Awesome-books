@@ -1,5 +1,5 @@
 body {
-  margin: 2rem;
+  margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
@@ -12,9 +12,58 @@ li {
   list-style: none;
 }
 
+tr {
+  border: 1px solid black;
+  margin-bottom: 2rem;
+}
+
+.section-title {
+  position: relative;
+}
+
+.navbar {
+  box-shadow: 0 10px 13px -7px #000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+}
+
+#books-list,
+#add-book-container,
+#contact {
+  background-image: url('./media/photo-1507842217343-583bb7270b66.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  min-height: 80vh;
+}
+
+#books-list::after,
+#add-book-container::after,
+#contact::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #d3d3d3;
+  opacity: 0.6;
+  z-index: -1;
+}
+
+.date {
+  top: 90px;
+  right: 10px;
+  z-index: 4;
+  font-weight: bold;
+}
+
 .books-container {
   border: 2px solid black;
   width: 50vw;
+  background-color: #d3d3d3;
+  opacity: 0.8;
 }
 
 .btn {
@@ -23,4 +72,21 @@ li {
 
 .btn:hover {
   border: 2px solid #2e2e2e;
+}
+
+ul {
+  margin-bottom: 0;
+}
+
+.active {
+  color: blue;
+}
+
+.desactive {
+  color: #2e2e2e;
+}
+
+.nav-item:nth-child(2),
+.nav-item:nth-child(3) {
+  border-left: 1.5px solid black;
 }
