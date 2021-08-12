@@ -14,6 +14,7 @@
 - Learn JavaScript syntax and DOM interface
 - Learn JavaScript classes
 - Store data with local storage
+- Single Page Apps
 
 
 ## Built With
