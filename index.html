@@ -19,29 +19,28 @@
             <div>
                 <ul class="d-flex align-items-center">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">List</a>
+                        <a class="nav-link link1 active" aria-current="page" href="#">List</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link desactive" href="#">Add new</a>
+                        <a class="nav-link link2 desactive" href="#">Add new</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link desactive" href="#">Contact</a>
+                        <a class="nav-link link3 desactive" href="#">Contact</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <section id="section-title" class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto text-center p-4">
-      <h1 class="display-4 py-2 text-dark ">All Awesome books</h1>
-      <p class="date position-absolute">12/09</p>
-    </section>
-
-    <section class="books-container container d-flex flex-column mb-5 mx-auto">
-        <h2 id="empty-tag" class="list-title text-center w-100 mx-auto">Books List is empty</h2>
-        <table class="table table-striped my-2">
-            <tbody id="books"></tbody>
-        </table>
+    <section id="books-list" class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto text-center p-4">
+        <h1 class="display-4 py-2 text-dark ">All Awesome books</h1>
+        <p class="date position-absolute">12/09</p>
+        <div class="books-container container d-flex flex-column mb-5 mx-auto">
+            <h2 id="empty-tag" class="list-title text-center w-100 mx-auto">Books List is empty</h2>
+            <table class="table table-striped my-2">
+                <tbody id="books"></tbody>
+            </table>
+        </div>
     </section>
 
     <section id="add-book-container" class="container">
@@ -62,8 +61,8 @@
         </div>
     </section>
 
-    <section class="p-3 text-center">
-        <h3 class="mb-4">Contact Information</h3>
+    <section id="contact" class="p-3 text-center">
+        <h3 class="display-4 py-2 text-dark ">Contact Information</h3>
         <p>If you have any question or you just want to say "Hello"? <br>
             You can reach out to us!
         </p>
@@ -84,6 +83,7 @@
     </footer>
 
     <script src="./JS/main.js"></script>
+    <script src="./JS/generateLink.js"></script>
 </body>
 
 </html>
