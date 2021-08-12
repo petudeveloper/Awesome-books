@@ -1,8 +1,10 @@
+/* eslint-disable no-undef */
 const link = document.querySelectorAll('.nav-link');
 const booksListSection = document.querySelector('#books-list');
 const addBookSection = document.querySelector('#add-book-container');
 const contactSection = document.querySelector('#contact');
 const sections = [booksListSection, addBookSection, contactSection];
+const { DateTime } = luxon;
 
 link[0].addEventListener('click', () => {
   link[0].classList.add('active');
@@ -34,13 +36,4 @@ link[2].addEventListener('click', () => {
   sections[1].classList.add('d-none');
 });
 
-/* for (let i = 0; sections.length; i += 0) {
-  let others = sections.slice(i, 1);
-  links[i].addEventListener('click', () => {
-    sections[i].classList.remove('d-none');
-    others.forEach((other) => {
-      other.classList.add('d-none');
-    });
-  });
-  others = [];
-} */
+setInterval(() => { document.getElementById('render-date').innerHTML = `${DateTime.now().toLocaleString(DateTime.DATETIME_MED)}`; }, 1000);
