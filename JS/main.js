@@ -1,8 +1,5 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
-const now = DateTime.now();
-
-console.log(now);
 
 class ListOfBooks {
   constructor() {
