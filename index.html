@@ -19,22 +19,24 @@
             <div>
                 <ul class="d-flex align-items-center">
                     <li class="nav-item">
-                        <a class="nav-link link1 active" aria-current="page" href="#">List</a>
+                        <a class="nav-link desactive" aria-current="page" href="#">List</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link link2 desactive" href="#">Add new</a>
+                        <a class="nav-link desactive" href="#">Add new</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link link3 desactive" href="#">Contact</a>
+                        <a class="nav-link desactive" href="#">Contact</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-
-    <section id="books-list" class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto text-center p-4">
-        <h1 class="display-4 py-2 text-dark ">All Awesome books</h1>
+    <div class="date">
         <p class="date position-absolute">12/09</p>
+    </div>
+
+    <section id="books-list" class="book-list col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto text-center p-4">
+        <h1 class="display-4 py-2 text-dark ">All Awesome books</h1>
         <div class="books-container container d-flex flex-column mb-5 mx-auto">
             <h2 id="empty-tag" class="list-title text-center w-100 mx-auto">Books List is empty</h2>
             <table class="table table-striped my-2">
@@ -43,7 +45,7 @@
         </div>
     </section>
 
-    <section id="add-book-container" class="container">
+    <section id="add-book-container" class="d-none">
         <div class="row text-dark">
             <div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto text-center form p-4">
                 <h2 class="display-4 py-2 text-dark">Add a new book</h2>
@@ -61,7 +63,7 @@
         </div>
     </section>
 
-    <section id="contact" class="p-3 text-center">
+    <section id="contact" class="p-3 text-center d-none">
         <h3 class="display-4 py-2 text-dark ">Contact Information</h3>
         <p>If you have any question or you just want to say "Hello"? <br>
             You can reach out to us!
