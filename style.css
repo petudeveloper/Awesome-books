@@ -1,5 +1,5 @@
 body {
-  margin: 2rem;
+  margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
@@ -10,6 +10,15 @@ form > input {
 
 li {
   list-style: none;
+}
+
+.section-title {
+  position: relative;
+}
+
+.date {
+  top: 80px;
+  right: 10px;
 }
 
 .books-container {
@@ -23,4 +32,16 @@ li {
 
 .btn:hover {
   border: 2px solid #2e2e2e;
+}
+
+ul {
+  margin-bottom: 0;
+}
+
+.active {
+  color: blue;
+}
+
+.desactive {
+  color: #2e2e2e;
 }
