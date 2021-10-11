@@ -55,7 +55,10 @@
 
 To get a local copy up and running follow these simple example steps.
 
-clone : git@github.com:petumazo/Awesome-books.git on your local machine and feel free
+- Open your terminal and navigate to the directory where you want to copy the project.
+- Run on your terminal `git clone git@github.com:petumazo/Awesome-books.git`.
+- Run on yout terminal `cd Awesome-books`.
+- Open the file `index.html` file.
 
 ### Setup
 
